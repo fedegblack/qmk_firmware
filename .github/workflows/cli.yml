@@ -5,6 +5,7 @@ on:
     branches:
     - master
     - future
+    - fedegblack
   pull_request:
     paths:
     - 'lib/python/**'
