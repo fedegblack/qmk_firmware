@@ -40,6 +40,7 @@ enum my_keycodes {
     KC_FNX,
     KC_FNX2,
     KC_FNX3,
+    KC_FNX4,
     KC_12,
     KC_NUMFN,
     BAR
@@ -52,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 {   KC_TAB,     KC_A,       KC_S,       KC_D,    KC_F,       KC_G,    KC_LBRC, KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,    KC_BSLS,    KC_DEL,     KC_END,     KC_PGDN,    KC_P7,      KC_P8,      KC_P9,      KC_PPLS },
                 {   KC_BSPC,    KC_Z,       KC_X,       KC_C,    KC_V,       KC_B,    KC_RBRC, KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_NUHS,    KC_ENT,     KC_NO,      KC_NO,      KC_NO,      KC_P4,      KC_P5,      KC_P6,      KC_NO   },
                 {   KC_LSFT,    KC_UP,      SGUI(KC_N), KC_FNX3, KC_FNX2,   KC_SPC,  TG(_FN2), MO(_FN),    KC_RSFT,    KC_RALT,    KC_INT2,    KC_CAPS,    KC_NO,      KC_RSFT,    KC_NO,      KC_UP,      KC_NO,      KC_P1,      KC_P2,      KC_P3,      KC_PENT },
-                {   KC_LCTL,    KC_LGUI,    KC_LALT,    KC_ENT,  KC_INT4,    KC_FNX,  KC_APP,  KC_NO,      KC_RCTL,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_NO,      KC_P0,      KC_PDOT,    KC_NO   }
+                {   KC_LCTL,    KC_LGUI,    KC_LALT,    KC_FNX4,  KC_INT4,    KC_FNX,  KC_APP,  KC_NO,      KC_RCTL,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_NO,      KC_P0,      KC_PDOT,    KC_NO   }
               },
     [_FN]   = { {   RESET,      KC_F13,     KC_F14,     KC_F15,  KC_F16,     KC_F17,  KC_F18,  KC_F19,     KC_F20,     KC_F21,     KC_F22,     KC_F23,     KC_F24,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
                 {   RESET_KB,   KC_TILD,    KC_2,       KC_3,    KC_4,       KC_5,    KC_6,    KC_EXLM,    KC_QUES,    KC_9,       KC_0,       _______,    KC_COLN,    _______,    RGB_M_P,    RGB_M_B,    RGB_M_R,    _______,    _______,    _______,    _______ },
@@ -61,8 +62,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    RGB_VAI,    _______,    KC_BRIU,    KC_BRID,    _______,    _______ },
                 {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    RGB_HUD,    RGB_VAD,    RGB_HUI,    _______,    _______,    _______,    _______ }
              },
-    [_FN2]  = { {   RESET_KB,   KC_MSEL,    KC_VOLD,    KC_VOLU, KC_MUTE,    KC_MSTP, KC_MPRV, KC_MPLY,    KC_MNXT,    KC_MAIL,    KC_WHOM,    KC_CALC,    RGB_TOG,    _______,    KC_PAUS,    _______,    KC_SLEP,    _______,    _______,    _______,    _______ },
-                {   KC_MPLY,    _______,    _______,    KC_UP,   _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    RGB_SAI,    RGB_HUI,    RGB_SAI,    _______,    _______,    _______,    _______ },
+    [_FN2]  = { {   _______,    KC_MSEL,    KC_VOLD,    KC_VOLU, KC_MUTE,    KC_MSTP, KC_MPRV, KC_MPLY,    KC_MNXT,    KC_MAIL,    KC_WHOM,    KC_CALC,    RGB_TOG,    _______,    KC_PAUS,    _______,    KC_SLEP,    _______,    _______,    _______,    _______ },
+                {   RESET_KB,   KC_P5,      _______,    KC_UP,   _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    RGB_SAI,    RGB_HUI,    RGB_SAI,    _______,    _______,    _______,    _______ },
                 {   _______,    _______,    KC_LEFT,    KC_DOWN, KC_RIGHT,   _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    RGB_SAD,    RGB_HUD,    RGB_SAD,    _______,    _______,    _______,    _______ },
                 {   _______,    KC_MSTP,    KC_MPRV,    KC_MPLY, KC_MNXT,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
                 {   _______,    _______,    _______,    _______, KC_LALT,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    RGB_SPI,    _______,    _______,    _______,    _______,    _______ },
@@ -71,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN3]  = { {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
                 {   _______,    KC_P,       KC_O,       KC_I,    KC_U,       KC_Y,    _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
                 {   _______,    KC_SCLN,    KC_L,       KC_K,    KC_J,       KC_H,    _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_7,       KC_8,       KC_9,    _______ },
-                {   _______,    _______,    _______,    KC_M,    KC_N,       _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_4,       KC_5,       KC_6,    _______ },
+                {   _______,    KC_SLSH,    KC_DOT,     KC_COMM, KC_M,       KC_N,    _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_4,       KC_5,       KC_6,    _______ },
                 {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_1,       KC_2,       KC_3,    _______ },
                 {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_0,    _______,    _______ }
              },
@@ -83,11 +84,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_0,    _______,    _______ }
              },
     [_FN5]  = { {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
-                {   _______,    _______,    KC_7,       KC_8,       KC_9,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
-                {   _______,    KC_0,       KC_4,       KC_5,       KC_6,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_7,       KC_8,       KC_9,    _______ },
-                {   _______,    KC_DOT,     KC_1,       KC_2,       KC_3,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_4,       KC_5,       KC_6,    _______ },
+                {   _______,    KC_MINS,    KC_PLUS,    KC_ASTR, KC_SLSH,    KC_EQL,  _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
+                {   _______,    KC_1,       KC_2,       KC_3,    KC_4,       KC_5,    _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_7,       KC_8,       KC_9,    _______ },
+                {   _______,    KC_6,       KC_7,       KC_8,    KC_9,       KC_0,    _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_4,       KC_5,       KC_6,    _______ },
                 {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_1,       KC_2,       KC_3,    _______ },
-                {   _______,    _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_0,    _______,    _______ }
+                {   KC_DOT,     _______,    _______,    _______, _______,    _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_0,    _______,    _______ }
              },
     [_GAME]=  { {   KC_ESC,     KC_F1,      KC_F2,      KC_F3,   KC_F4,      KC_F5,   KC_F6,   KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     KC_NO,      KC_PSCR,    KC_SLCK,    KC_PAUS,    KC_NO,      KC_NO,      KC_NO,      KC_NO   },
                 {   KC_AT,      KC_Q,       KC_W,       KC_E,    KC_R,       KC_T,    KC_MINS, KC_EQL,     KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       TG(_GAME),  TO(_BASE),  KC_HOME,    KC_PGUP,    KC_NLCK, KC_MS_WH_LEFT, KC_MS_WH_RIGHT, KC_PMNS },
@@ -184,11 +185,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
        case KC_FNX3:
             if(record->event.pressed) {
                 fnx_layer_timer = timer_read();
-                register_code(KC_LCTL); // Change the key to be held here
+                layer_on(_FN3); // Change the key to be held here
             } else {
-                unregister_code(KC_LCTL); // Change the key that was held here, too!
+                layer_off(_FN3); // Change the key that was held here, too!
                 if (timer_elapsed(fnx_layer_timer) < 50) {
-                     layer_invert(_FN3); // Change the character(s) to be sent on tap here
+                     register_code(OSM(MOD_LCTL)); // Change the character(s) to be sent on tap here
+                }
+            }
+        return false; // We handled this keypress
+       case KC_FNX4:
+            if(record->event.pressed) {
+                fnx_layer_timer = timer_read();
+                layer_on(_FN5); // Change the key to be held here
+            } else {
+                layer_off(_FN5); // Change the key that was held here, too!
+                if (timer_elapsed(fnx_layer_timer) < 150) {
+                     register_code(KC_ENT); // Change the character(s) to be sent on tap here
                 }
             }
         return false; // We handled this keypress
