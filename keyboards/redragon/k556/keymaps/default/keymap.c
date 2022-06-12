@@ -183,7 +183,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 layer_off(_FN3); // Change the key that was held here, too!
                 if (timer_elapsed(fnx_layer_timer) < 50) {
-                     register_code(OSM(MOD_LCTL)); // Change the character(s) to be sent on tap here
+                     register_code(KC_X); // Change the character(s) to be sent on tap here
                 }
             }
         return false; // We handled this keypress
