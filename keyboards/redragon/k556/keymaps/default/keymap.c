@@ -218,7 +218,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 if (timer_elapsed(fnx_layer_timer) < 150) {  
                     layer_invert(_FN3);
                 }
-            }
+            } 
         return true;
           case RESET_KB:
             NVIC_SystemReset();
