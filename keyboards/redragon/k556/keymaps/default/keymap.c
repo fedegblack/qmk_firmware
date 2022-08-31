@@ -35,10 +35,10 @@ enum layer_names {
 enum my_keycodes {
     RESET_KB = SAFE_RANGE,
     KC_FNX,
-    KC_FNX2,
-    KC_FNX3,
+//    KC_FNX2,
+//    KC_FNX3,
     KC_FNX4,
-    KC_12,
+//    KC_12,
     KC_NUMFN,
     BAR
 };
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 {   KC_AT,      KC_Q,       KC_W,       KC_E,    KC_R,       KC_T,    KC_MINS, KC_EQL,     KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       TG(_GAME),  TO(_BASE),  KC_HOME,    KC_PGUP,    KC_NLCK, KC_MS_WH_LEFT, KC_MS_WH_RIGHT, KC_PMNS },
                 {   KC_TAB,     KC_A,       KC_S,       KC_D,    KC_F,       KC_G,    KC_LBRC, KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,    KC_BSLS,    KC_DEL,     KC_END,     KC_PGDN,    KC_MS_WH_UP, KC_MS_UP, KC_MS_WH_DOWN, KC_PPLS },
                 {   KC_BSPC,    KC_Z,       KC_X,       KC_C,    KC_V,       KC_B,    KC_RBRC, KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_NUHS,    KC_ENT,     KC_NO,      KC_NO,      KC_NO,      KC_MS_LEFT, KC_MS_BTN1, KC_MS_RIGHT, KC_NO   },
-                {   KC_UP,      KC_NUBS,    SGUI(KC_N), KC_LCTL, KC_LSFT,    KC_SPC,  KC_12,   MO(_COLE),  KC_7,       KC_8,       KC_9,       KC_0,       KC_NO,      KC_RSFT,    KC_NO,      KC_UP,      KC_NO,      KC_MS_BTN2, KC_MS_DOWN, KC_MS_BTN3, KC_PENT },
+                {   KC_UP,      KC_NUBS,    SGUI(KC_N), KC_LCTL, KC_LSFT,    KC_SPC,  KC_1,   MO(_COLE),  KC_7,       KC_8,       KC_9,       KC_0,       KC_NO,      KC_RSFT,    KC_NO,      KC_UP,      KC_NO,      KC_MS_BTN2, KC_MS_DOWN, KC_MS_BTN3, KC_PENT },
                 {   KC_DOWN,    KC_LGUI,    KC_LALT,    KC_ENT,  KC_RALT,    KC_FNX,  KC_APP,  KC_NO,      KC_RCTL,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_NO,    KC_MS_ACCEL0, KC_MS_ACCEL2, KC_NO   }
               },
     [_COLE] = { {   _______,    KC_1,       KC_2,       KC_3,    KC_4,       KC_5,    KC_6,    KC_7,       KC_8,       KC_9,       KC_0,       _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
@@ -176,7 +176,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
         return false; // We handled this keypress
-*/       case KC_FNX3:
+       case KC_FNX3:
             if(record->event.pressed) {
                 fnx_layer_timer = timer_read();
                 layer_on(_FN3); // Change the key to be held here
@@ -187,7 +187,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
         return false; // We handled this keypress
-       case KC_FNX4:
+*/       case KC_FNX4:
             if(record->event.pressed) {
                 fnx_layer_timer = timer_read();
                 layer_on(_FN5); // Change the key to be held here
@@ -198,7 +198,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
         return false; // We handled this keypress
-       case KC_12:
+/*       case KC_12:
             if(record->event.pressed) {
                 fnx_layer_timer = timer_read();
                 register_code(KC_1); // Change the key to be held here
@@ -209,7 +209,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
         return false; // We handled this keypress
-  /*      case KC_NUMFN:                                    
+*/        case KC_NUMFN:                                    
             if(record->event.pressed){
                 fnx_layer_timer = timer_read();
                 layer_on(_FN);
@@ -260,6 +260,10 @@ uint32_t layer_state_set_user(uint32_t state) {
         case _FN5:
           rgblight_mode(3);
           rgblight_sethsv(80,255,255);
+          break;
+        case _FN6:
+          rgblight_mode(4);
+          rgblight_sethsv(159,255,255);
           break;
         case _GAME:
           rgblight_mode(2);
