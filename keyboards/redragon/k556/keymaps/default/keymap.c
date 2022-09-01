@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 {   KC_TAB,     KC_A,       KC_S,       KC_D,    KC_F,       KC_G,    KC_LBRC, KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,    KC_BSLS,    KC_DEL,     KC_END,     KC_PGDN,    KC_P7,      KC_P8,      KC_P9,      KC_PPLS },
                 {   KC_BSPC,    KC_Z,       KC_X,       KC_C,    KC_V,       KC_B,    KC_RBRC, KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_NUHS,    KC_ENT,     KC_NO,      KC_NO,      KC_NO,      KC_P4,      KC_P5,      KC_P6,      KC_NO   },
                 {   KC_LSFT,    KC_UP,      SGUI(KC_N), MO(_FN3), KC_RSFT,   KC_SPC,  TG(_FN2), MO(_FN),   KC_RSFT,    KC_RALT,    KC_INT2,    KC_CAPS,    KC_NO,      KC_RSFT,    KC_NO,      KC_UP,      KC_NO,      KC_P1,      KC_P2,      KC_P3,      KC_PENT },
-                {   KC_LCTL,    KC_LGUI,    KC_LALT,    KC_FNX4, KC_INT4,    KC_FNX,  KC_APP,  KC_NO,      KC_RCTL,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_NO,      KC_P0,      KC_PDOT,    KC_NO   }
+                {   KC_LCTL,    KC_LGUI,    KC_LALT,    LT(_FN5,KC_ENT), KC_INT4,    KC_FNX,  KC_APP,  KC_NO,      KC_RCTL,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_NO,      KC_P0,      KC_PDOT,    KC_NO   }
               },
     [_FN]   = { {   RESET,      KC_F13,     KC_F14,     KC_F15,  KC_F16,     KC_F17,  KC_F18,  KC_F19,     KC_F20,     KC_F21,     KC_F22,     KC_F23,     KC_F24,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ },
                 {   RESET_KB,   KC_TILD,    KC_2,       KC_3,    KC_4,       KC_5,    KC_6,    KC_EXLM,    KC_QUES,    KC_9,       KC_0,       _______,    KC_COLN,    _______,    RGB_M_P,    RGB_M_B,    RGB_M_R,    _______,    _______,    _______,    _______ },
@@ -200,7 +200,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
         return false; // We handled this keypress
-*/       case KC_FNX4:
+       case KC_FNX4:
             if(record->event.pressed) {
                 fnx_layer_timer = timer_read();
                 layer_on(_FN5); // Change the key to be held here
@@ -211,7 +211,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
         return true; // We handled this keypress
-/*       case KC_12:
+       case KC_12:
             if(record->event.pressed) {
                 fnx_layer_timer = timer_read();
                 register_code(KC_1); // Change the key to be held here
