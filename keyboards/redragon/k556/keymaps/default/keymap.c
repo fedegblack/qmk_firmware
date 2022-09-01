@@ -257,7 +257,7 @@ void matrix_init_user() {
 }
 uint32_t layer_state_set_user(uint32_t state) {
   uint8_t layer = biton32(state);
-  if (prev!=_B) {
+  if (prev!=_STOCK) {
       switch (layer) {
         case _BASE:
           rgblight_mode(1);
