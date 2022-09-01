@@ -188,6 +188,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
         return false; // We handled this keypress
+       case KC_FNX4:
+            if(record->event.pressed) {
+                fnx_layer_timer = timer_read();
+                layer_on(_FN5); // Change the key to be held here
+            } else {
+                layer_off(_FN5); // Change the key that was held here, too!
+                layer_off(_FN3); // Change the key that was held here, too!
+                if (timer_elapsed(fnx_layer_timer) < 50) {
+                     register_code(KC_X); // Change the character(s) to be sent on tap here
+                }
+            }
+        return false; // We handled this keypress
 */       case KC_FNX4:
             if(record->event.pressed) {
                 fnx_layer_timer = timer_read();
