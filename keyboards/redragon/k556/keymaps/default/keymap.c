@@ -11,6 +11,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 #include QMK_KEYBOARD_H
 #define MOUSEKEY_INTERVAL 1
 #define MOUSEKEY_DELAY 0
@@ -197,7 +198,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                      register_code(KC_ENT); // Change the character(s) to be sent on tap here
                 }
             }
-        return false; // We handled this keypress
+        return true; // We handled this keypress
 /*       case KC_12:
             if(record->event.pressed) {
                 fnx_layer_timer = timer_read();
@@ -262,7 +263,7 @@ uint32_t layer_state_set_user(uint32_t state) {
           rgblight_sethsv(80,255,255);
           break;
         case _FN6:
-          rgblight_mode(4);
+          rgblight_mode(3);
           rgblight_sethsv(159,255,255);
           break;
         case _GAME:
