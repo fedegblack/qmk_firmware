@@ -13,10 +13,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include QMK_KEYBOARD_H
-#define MOUSEKEY_INTERVAL 1
+#define MOUSEKEY_INTERVAL 0
 #define MOUSEKEY_DELAY 0
 #define MOUSEKEY_TIME_TO_MAX 0
-#define MOUSEKEY_MAX_SPEED 7
+#define MOUSEKEY_MAX_SPEED 30
 #define MOUSEKEY_WHEEL_DELAY 0
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
